@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "How to Take Care of Your Watch",
+      "image": "/images/blogs/watch-care.jpg",
+      "excerpt": "Learn the essential tips to maintain your watch and keep it looking and functioning like new.",
+      "content": "Taking care of your watch is crucial for its longevity. Start by keeping it away from strong magnets, avoid water unless it's water-resistant, and clean it regularly using a microfiber cloth. Ensure you store your watch in a dry, cool place when not in use...",
+      "link": "watch-care"
+    },
+    {
+      "id": 2,
+      "title": "Setting Time Zones on Your Watch",
+      "image": "/images/blogs/time-zone.jpg",
+      "excerpt": "Master the art of setting time zones on your watch with this simple guide.",
+      "content": "To set time zones, locate the crown or buttons on your watch. Pull the crown out to its second position and turn it to adjust the hour hand. For smartwatches, use the accompanying app to sync time zones automatically based on your phone's GPS...",
+      "link": "setting-timezones"
+    },
+    {
+      "id": 3,
+      "title": "Cleaning Tips for Your Watch",
+      "image": "/images/blogs/cleaning-tips.jpg",
+      "excerpt": "Keep your watch clean and shiny with these easy cleaning tips.",
+      "content": "To clean your watch, start by using a soft toothbrush with mild soap for metal straps. Avoid harsh chemicals and clean leather straps with a damp cloth. Always ensure the crown is closed while cleaning and dry it thoroughly afterward...",
+      "link": "cleaning-tips"
+    }
+  ]
+}

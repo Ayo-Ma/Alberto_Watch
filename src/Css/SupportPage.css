@@ -1,0 +1,214 @@
+
+.support-page {
+line-height: var(--line-height-larger);
+}
+
+.support-title {
+  text-align: center;
+color: var(--neutral-color);
+font-size: 2.5rem;
+ 
+}
+
+
+.support-hero{
+  background:linear-gradient(rgba(0, 0, 0, 0.542),rgba(0, 0, 0, 0.828)), url("../assets/usenow.webp") no-repeat center center;
+
+  background-size: cover;
+  padding: 4.6rem 0;
+  background-attachment: fixed;
+   margin-bottom: 20px;
+}
+
+.faq, .knowledge-base, .support-info {
+  margin-bottom: 4rem;
+
+  padding: 0 2rem;
+
+
+  p , li {  
+    line-height: var(--line-height-larger);
+  }
+}
+
+.faq h2, .knowledge-base h2, .support-info h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+   margin-bottom: 1rem; 
+}
+
+ul li strong {
+  color: var(--secondary-color);
+
+}
+
+ul li a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: .3s ease-in-out;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.contact-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.contact-form {
+  background-color: var(--neutral-color);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact-form h2 {
+  margin-bottom: 10px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-color);
+}
+
+.close-form {
+  margin-top: 10px;
+  padding: 5px 15px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.close-form:hover {
+  background-color: #999;
+}
+
+
+
+
+.accordion-btn {
+  width: 90%;
+  padding: 1rem 2rem;
+  font-size: 16px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem auto;
+  display: block;
+  text-align: left;
+  transition: .3s ease-in-out;
+}
+
+.accordion-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.feedback-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--neutral-color);
+  margin-bottom: 20px;
+}
+
+.feedback-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.feedback-content label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.feedback-content select,
+.feedback-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.feedback-content button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.feedback-content button:hover {
+  background-color: var(--accent-color);
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .faq h2, .knowledge-base h2, .support-info h2 {
+    color: var(--primary-color);
+    font-size: var(--h2);
+    text-align: left;
+    /* margin-bottom: 1.5rem; */
+  }
+
+  .support-title{
+    font-size: 3.5rem;
+  }
+}

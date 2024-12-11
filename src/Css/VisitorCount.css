@@ -1,0 +1,13 @@
+.visitor-count {
+    position: fixed;
+    top: 10px;
+    right: 200px;
+    /* left: 300px; */
+    background-color: var(--primary-color);
+    color: var(--neutral-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+  }
+  

@@ -1,0 +1,447 @@
+{
+  "sports": [
+    {
+      "id": 1,
+      "name": "ProSport Chrono 5000",
+      "price": 199,
+      "image": "/images/sport/sport1.avif",
+      "description": "Engineered for peak performance, this rugged chrono watch features a heart rate monitor, GPS tracking, and water resistance up to 100 meters.",
+      "technologies": [
+        {
+          "name": "GPS Tracking",
+          "description": "Precise location tracking to help you track your routes and distances.",
+          "icon": "GiCompass"
+        },
+        {
+          "name": "Heart Rate Monitoring",
+          "description": "Real-time heart rate monitoring to keep you on top of your fitness goals.",
+          "icon": "FiHeart"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Endurance Xtreme",
+      "price": 249,
+      "image": "/images/sport/sport2.webp",
+      "description": "A versatile sports watch with multi-sport modes, precise fitness tracking, and a long-lasting battery, perfect for the active athlete.",
+      "technologies": [
+        {
+          "name": "Multi-Sport Modes",
+          "description": "Switch seamlessly between different workout modes.",
+          "icon": "FaRunning"
+        },
+        {
+          "name": "Long Battery Life",
+          "description": "Lasts up to 2 weeks on a single charge.",
+          "icon": "FaBatteryFull"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "HydroPro Diver 400",
+      "price": 219,
+      "image": "/images/sport/sport3.avif",
+      "description": "Water-resistant up to 400 meters, this high-performance diver watch is designed for professional swimmers and underwater explorers.",
+      "technologies": [
+        {
+          "name": "Depth Sensor",
+          "description": "Measures water depth in real-time for accurate diving performance.",
+          "icon": "GiWaterSplash"
+        },
+        {
+          "name": "Pressure Resistance",
+          "description": "Handles water pressure up to 400 meters underwater.",
+          "icon": "MdTrendingUp"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "AquaSport Pro",
+      "price": 229,
+      "image": "/images/sport/sport4.avif",
+      "description": "Built for water sports, this watch tracks lap times, measures water depth, and offers superior durability in extreme conditions.",
+      "technologies": [
+        {
+          "name": "Lap Time Tracker",
+          "description": "Accurately records your lap times for swimming and running.",
+          "icon": "GiStopwatch"
+        },
+        {
+          "name": "Waterproof Build",
+          "description": "Withstands extreme water pressure for high-performance sports.",
+          "icon": "GiWaterSplash"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Adventure Master 3000",
+      "price": 239,
+      "image": "/images/sport/sport5.webp",
+      "description": "Tough enough for your most intense workouts, this all-terrain watch features a barometer, altimeter, and full GPS functionality.",
+      "technologies": [
+        {
+          "name": "Barometer",
+          "description": "Measures atmospheric pressure to predict weather changes.",
+          "icon": "MdTrendingUp"
+        },
+        {
+          "name": "Altimeter",
+          "description": "Tracks your altitude for climbing and hiking.",
+          "icon": "GiMountainCave"
+        }
+      ]
+    }
+  ],
+  "smart": [
+    {
+      "id": 6,
+      "name": "SmartLife Pro 2.0",
+      "price": 349,
+      "image": "/images/smart/smartWatch1.webp",
+      "description": "The ultimate health companion, this smartwatch tracks heart rate, sleep, stress levels, and integrates seamlessly with your smartphone.",
+      "technologies": [
+        {
+          "name": "Sleep Tracking",
+          "description": "Monitor the quality of your sleep for better health.",
+          "icon": "MdNightsStay"
+        },
+        {
+          "name": "Stress Monitoring",
+          "description": "Track your stress levels to maintain emotional balance.",
+          "icon": "RiEmotionSadLine"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "TechTime Edge",
+      "price": 399,
+      "image": "/images/smart/smart2.webp",
+      "description": "Stay connected with advanced notifications, built-in fitness tracking, and customizable watch faces for a modern lifestyle.",
+      "technologies": [
+        {
+          "name": "Customizable Watch Faces",
+          "description": "Change the watch face to suit your personal style.",
+          "icon": "MdFace"
+        },
+        {
+          "name": "Bluetooth Connectivity",
+          "description": "Seamlessly connect to your devices and enjoy fast syncing.",
+          "icon": "FaBluetoothB"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "WristAI Vision",
+      "price": 499,
+      "image": "/images/smart/smart3.webp",
+      "description": "AI-powered smartwatch with real-time health insights, daily wellness suggestions, and an ultra-responsive touch interface.",
+      "technologies": [
+        {
+          "name": "AI Integration",
+          "description": "Provides advanced health and fitness insights powered by AI.",
+          "icon": "MdSmartDisplay"
+        },
+        {
+          "name": "NFC Support",
+          "description": "Allows seamless payment via NFC technology.",
+          "icon": "MdNfc"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "TechTime Elite",
+      "price": 549,
+      "image": "/images/smart/smart4.webp",
+      "description": "A premium smartwatch with 24/7 health monitoring, NFC, and enhanced battery life that lasts up to a full week on a single charge.",
+      "technologies": [
+        {
+          "name": "24/7 Health Monitoring",
+          "description": "Tracks your vitals continuously throughout the day.",
+          "icon": "FiHeart"
+        },
+        {
+          "name": "Enhanced Battery",
+          "description": "Lasts up to 7 days on a single charge.",
+          "icon": "FaBatteryThreeQuarters"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "AI Watch Pro",
+      "price": 529,
+      "image": "/images/smart/smart5.webp",
+      "description": "Powerful smartwatch with advanced AI features, fitness tracking, and the ability to monitor your health metrics in real-time.",
+      "technologies": [
+        {
+          "name": "Real-Time Health Metrics",
+          "description": "Monitors vital stats in real-time for instant feedback.",
+          "icon": "GiHealthCapsule"
+        },
+        {
+          "name": "Fitness Tracking",
+          "description": "Tracks steps, calories, and other fitness metrics.",
+          "icon": "GiGymBag"
+        }
+      ]
+    }
+  ],
+  "vintage": [
+    {
+      "id": 11,
+      "name": "Classic 1950s Heritage",
+      "price": 799,
+      "image": "/images/vintage/vintage1.webp",
+      "description": "A stunning reimagining of a classic 1950s design, this vintage watch is the epitome of elegance with modern movement technology.",
+      "technologies": [
+        {
+          "name": "Vintage Craftsmanship",
+          "description": "Handcrafted with techniques inspired by the 1950s.",
+          "icon": "GiGoldBar"
+        },
+        {
+          "name": "Scratch-Resistant Crystal",
+          "description": "Durable sapphire crystal for added protection.",
+          "icon": "GiCutDiamond"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Golden Era 18K",
+      "price": 999,
+      "image": "/images/vintage/vintage2.avif",
+      "description": "Crafted from solid 18K gold, this vintage piece offers precision and luxury, making it an ideal addition to any collector's lineup.",
+      "technologies": [
+        {
+          "name": "18K Gold Casing",
+          "description": "Built with authentic 18K gold for a timeless design.",
+          "icon": "GiGoldBar"
+        },
+        {
+          "name": "Modern Automatic Movement",
+          "description": "Combines vintage style with modern movement technology.",
+          "icon": "MdTrendingUp"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "RetroPilot Chrono",
+      "price": 899,
+      "image": "/images/vintage/vintage3.avif",
+      "description": "Inspired by vintage aviator designs, this chronograph features a leather strap and a timeless look for the modern enthusiast.",
+      "technologies": [
+        {
+          "name": "Chronograph Functionality",
+          "description": "Accurately measures short intervals of time.",
+          "icon": "GiStopwatch"
+        },
+        {
+          "name": "Leather Strap",
+          "description": "Durable and comfortable leather strap for everyday wear.",
+          "icon": "GiLeatherBoot"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Vintage Diver’s Edition",
+      "price": 1275,
+      "image": "/images/vintage/vintage4.avif",
+      "description": "A tribute to the first divers' watches, with modern enhancements and 200-meter water resistance. The perfect blend of nostalgia and precision.",
+      "technologies": [
+        {
+          "name": "Modern Diver Enhancements",
+          "description": "200-meter water resistance with improved durability.",
+          "icon": "GiDivingHelmet"
+        },
+        {
+          "name": "Enhanced Readability",
+          "description": "Features luminous dials for low-light diving.",
+          "icon": "GiFlashlight"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Retro Steel Chronograph",
+      "price": 1349,
+      "image": "/images/vintage/vintage5.webp",
+      "description": "The steel chronograph design from the 1960s redefined; with upgraded movement and sleek, minimalist appeal for today's discerning wearer.",
+      "technologies": [
+        {
+          "name": "Steel Casing",
+          "description": "Polished steel case for durability and style.",
+          "icon": "GiCutDiamond"
+        },
+        {
+          "name": "Upgraded Movement",
+          "description": "Modern automatic movement for precision timekeeping.",
+          "icon": "MdWatch"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Vintage Classic 70s",
+      "price": 1250,
+      "image": "/images/vintage/vintage6.webp",
+      "description": "This 70s-inspired vintage timepiece stands out with its bold dial design, automatic movement, and high-contrast finish for visibility.",
+      "technologies": [
+        {
+          "name": "Bold Dial Design",
+          "description": "Features a vibrant and easy-to-read dial inspired by 70s aesthetics.",
+          "icon": "GiRetroController"
+        },
+        {
+          "name": "Automatic Movement",
+          "description": "Powered by a self-winding mechanism for precision and convenience.",
+          "icon": "MdSettings"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Classic Bluefly Diver",
+      "price": 1399,
+      "image": "/images/vintage/vintage7.webp",
+      "description": "A diver's watch with a twist—featuring a vintage blue bezel and the same high-performance functionality loved by collectors.",
+      "technologies": [
+        {
+          "name": "Blue Bezel Design",
+          "description": "Elegant blue bezel with anti-scratch coating for durability.",
+          "icon": "GiWaterDrop"
+        },
+        {
+          "name": "Diver Functionality",
+          "description": "Water resistance up to 200 meters for underwater adventures.",
+          "icon": "GiDivingHelmet"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Furlan Marri Flyback ",
+      "price": 3100,
+      "image": "/images/vintage/vintage8.webp",
+      "description": "A limited-edition chronograph with an iconic flyback complication. Crafted for serious watch collectors who appreciate advanced mechanics.",
+      "technologies": [
+        {
+          "name": "Flyback Chronograph",
+          "description": "Allows the stopwatch to reset and restart instantly.",
+          "icon": "GiStopwatch"
+        },
+        {
+          "name": "Limited Edition Build",
+          "description": "A collector's piece with a unique serial number for exclusivity.",
+          "icon": "GiStarMedal"
+        }
+      ]
+    }
+  ],
+  "luxury": [
+    {
+      "id": 19,
+      "name": "Luxury Masterpiece",
+      "price": 8500,
+      "image": "/images/luxury/luxury1.webp",
+      "description": "A luxury timepiece featuring impeccable craftsmanship, a stunning dial, and precision movement—designed for the discerning few.",
+      "technologies": [
+        {
+          "name": "Platinum Casing",
+          "description": "Crafted with premium platinum for unparalleled quality.",
+          "icon": "GiCutDiamond"
+        },
+        {
+          "name": "Self-Winding Mechanism",
+          "description": "Automatic winding for convenience and longevity.",
+          "icon": "MdTrendingUp"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Diamond Elegance",
+      "price": 11000,
+      "image": "/images/luxury/luxury2.webp",
+      "description": "Adorned with diamonds, this elegant watch combines beauty with functionality, offering exceptional accuracy and timeless style.",
+      "technologies": [
+        {
+          "name": "Diamond Set Dial",
+          "description": "Features hand-set diamonds on a polished dial.",
+          "icon": "GiDiamondRing"
+        },
+        {
+          "name": "Swiss Quartz Movement",
+          "description": "Ensures precise and reliable timekeeping.",
+          "icon": "GiCompass"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Platinum Prestige",
+      "price": 14000,
+      "image": "/images/luxury/luxury3.webp",
+      "description": "This platinum-cased watch is the pinnacle of luxury, offering superb craftsmanship, a refined design, and remarkable movement accuracy.",
+      "technologies": [
+        {
+          "name": "Precision Engineering",
+          "description": "High-accuracy mechanical movement.",
+          "icon": "MdSettings"
+        },
+        {
+          "name": "Water Resistance",
+          "description": "Withstands pressure up to 300 meters.",
+          "icon": "MdWaterDrop"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Golden Elite",
+      "price": 16000,
+      "image": "/images/luxury/luxury4.avif",
+      "description": "A stunning golden timepiece crafted for those who seek elegance and superior design. A watch that stands out in any collection.",
+      "technologies": [
+        {
+          "name": "Gold Plating",
+          "description": "Durable and stylish gold plating.",
+          "icon": "GiGoldBar"
+        },
+        {
+          "name": "Anti-Scratch Glass",
+          "description": "Protects the dial from scratches and damage.",
+          "icon": "GiCutDiamond"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Prestige Grand Platinum",
+      "price": 18500,
+      "image": "/images/luxury/luxury5.avif",
+      "description": "This prestigious timepiece combines platinum, diamond inlays, and the highest level of Swiss craftsmanship for the ultimate luxury experience.",
+      "technologies": [
+        {
+          "name": "Diamond Inlays",
+          "description": "Decorated with exquisite diamond inlays.",
+          "icon": "GiDiamondRing"
+        },
+        {
+          "name": "Swiss Craftsmanship",
+          "description": "Expertly crafted with Swiss precision.",
+          "icon": "GiSwissArmyKnife"
+        }
+      ]
+    }
+  ]
+}

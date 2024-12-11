@@ -1,0 +1,135 @@
+.product-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center; 
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 100%; 
+  max-height: 400px; 
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  text-align: left;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.product-info h1 {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.product-info p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.product-info button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 1.5rem;
+}
+
+.product-info button:hover {
+  background-color: var(--primary-color);
+}
+
+
+.technologies {
+  grid-column: 1 / -1; 
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.technologies h2 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.technology-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background-color: var(--secondary-color-light);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.tech-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.tech-card p {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  line-height: 1.4;
+}
+
+
+@media screen and (max-width: 768px) {
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product-image img {
+    max-width: 100%;
+    max-height: 300px; 
+  }
+
+  .technology-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .product-info button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,37 @@
+{
+    "featured": [
+      {
+        "id": 1,
+        "name": "ProSport Chrono 5000",
+        "price": 199,
+        "image": "/images/sport/sport1.avif",
+        "description": "Engineered for peak performance, this rugged chrono watch features a heart rate monitor, GPS tracking, and water resistance up to 100 meters.",
+        "category": "sports"
+      },
+      {
+        "id": 19,
+        "name": "Luxury Masterpiece",
+        "price": 8500,
+        "image": "/images/luxury/luxury1.webp",
+        "description": "A luxury timepiece featuring impeccable craftsmanship, a stunning dial, and precision movement—designed for the discerning few.",
+        "category": "luxury"
+      },
+      {
+        "id": 8,
+        "name": "WristAI Vision",
+        "price": 499,
+        "image": "/images/smart/smart3.webp",
+        "description": "AI-powered smartwatch with real-time health insights, daily wellness suggestions, and an ultra-responsive touch interface.",
+        "category": "smart"
+      },
+      {
+        "id": 13,
+        "name": "RetroPilot Chrono",
+        "price": 899,
+        "image": "/images/vintage/vintage3.avif",
+        "description": "Inspired by vintage aviator designs, this chronograph features a leather strap and a timeless look for the modern enthusiast.",
+        "category": "vintage"
+      }
+    ]
+  }
+  
