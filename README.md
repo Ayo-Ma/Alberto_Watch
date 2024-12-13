@@ -82,6 +82,11 @@ npm run build
 ```
 The build files will be available in the `dist` directory.
 
+
+### Website is Live on Vercel : [text](https://alberto-watch-gpoc.vercel.app) 
+
+
+
 ### Deployment
 The project can be deployed to any hosting platform like **Netlify**, **Vercel**, or **GitHub Pages**, but we personally used **Vercel** because it is much more easier😁
 
