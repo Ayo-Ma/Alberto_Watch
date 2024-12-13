@@ -16,6 +16,16 @@
    
 }
 
+.link::after{
+    content: '';
+    width: 2px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    margin: 0 1rem;
+}
+
 .footer-container{
 
     display: flex;

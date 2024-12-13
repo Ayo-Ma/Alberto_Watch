@@ -54,10 +54,10 @@ const Footer = () => {
     <div className="footer-social">
       <h5>Follow Us</h5>
       <div className="social-icons">
-        <Link to="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</Link>
-        <Link to="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</Link>
-        <Link to="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</Link>
-        <Link to="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+        <Link to="https://facebook.com" className='link' target="_blank" rel="noopener noreferrer">Facebook</Link>
+        <Link to="https://instagram.com" className='link' target="_blank" rel="noopener noreferrer">Instagram</Link>
+        <Link to="https://twitter.com" className='link' target="_blank" rel="noopener noreferrer">Twitter</Link>
+        <Link to="https://linkedin.com className='link'" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
       </div>
     </div>
   </div>
