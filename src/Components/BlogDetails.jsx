@@ -25,11 +25,18 @@ const BlogDetails = () => {
     return <p>Loading blog...</p>;
   }
 
+  // Split content into paragraphs
+  const paragraphs = blog.content.split("\n");
+
   return (
     <div className="blog-details">
       <img src={blog.image} alt={blog.title} />
       <h1>{blog.title}</h1>
-      <p>{blog.content}</p>
+      <div className="blog-content">
+        {paragraphs.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
     </div>
   );
 };

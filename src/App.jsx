@@ -16,6 +16,7 @@ import Breadcrumbs from "./Components/Breadcrumbs";
 import Blogs from "./Components/Blogs";
 import BlogDetails from "./Components/BlogDetails";
 import Policies from "./Components/Policies";
+import Ticker from './Components/Ticker'
 function App() {
   return (
     <>
@@ -39,6 +40,7 @@ function App() {
 
         </Routes>
         <Footer />
+        <Ticker />
       </BrowserRouter>
     </>
   );
