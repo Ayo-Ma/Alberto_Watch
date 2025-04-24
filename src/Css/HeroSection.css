@@ -7,7 +7,7 @@
 
   min-height: 100svh;
   img {
-    width: 100%;
+   /*  width: 100%; */
     max-width: 350px;
     object-fit: cover;
   }

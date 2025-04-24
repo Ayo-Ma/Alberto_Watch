@@ -1,56 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    font-size: 100%;
-    box-sizing: border-box;
-    font-family: "Montserrat";
-    line-height: 1.5;
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  line-height: 1.5;
 }
-html, body {
+html,
+body {
   min-height: 100svh;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-
-:root{
-    --accent-color: #FCCB5C;
-    --primary-color: #191919;
-    --secondary-color: #333533;
-    --neutral-color: #fff;
-    --h1:3rem;
-    --h2:2rem;
-    --h3:1.5rem;
-    --h4:1.2rem;
-    --p:1rem;
-    --small-text:0.8rem;
-    --margin-small :1rem;
-    --margin-medium :2rem;
-    --margin-large :3.25rem;
-    --line-height-small:120%;
-    --line-height-medium:150%;
-    --line-height-large:180%;
-    --line-height-larger:200%;
-    --font-weight-regular:400;
-    --font-weight-medium:500;
-    --font-weight-bold:700;
+:root {
+  --accent-color: #fccb5c;
+  --primary-color: #191919;
+  --secondary-color: #333533;
+  --neutral-color: #fff;
+  --h1: 3rem;
+  --h2: 2rem;
+  --h3: 1.5rem;
+  --h4: 1.2rem;
+  --p: 1rem;
+  --small-text: 0.8rem;
+  --margin-small: 1rem;
+  --margin-medium: 2rem;
+  --margin-large: 3.25rem;
+  --line-height-small: 120%;
+  --line-height-medium: 150%;
+  --line-height-large: 180%;
+  --line-height-larger: 200%;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 *::after,
-*::before{
-    box-sizing: border-box;
+*::before {
+  box-sizing: border-box;
 }
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-button{
-    border: none;
-    background: none;
+button {
+  border: none;
+  background: none;
 }
 
 /* Default Styles */

@@ -119,7 +119,7 @@ const ProductDetails = () => {
         <h1>{product.name}</h1>
         <p>{product.description}</p>
         <p>
-          <strong>Price:</strong> ${product.price}
+          <strong className="product-name">${product.price}</strong> 
         </p>
         <button
           onClick={() => {

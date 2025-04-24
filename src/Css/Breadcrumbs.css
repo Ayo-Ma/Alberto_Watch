@@ -36,9 +36,9 @@
   }
   
   .breadcrumbs li::after {
-    content: ">";
+    content: "/";
     margin-left: 10px;
-    color: #aaa;
+    color: #aeaeae;
   }
   
   .breadcrumbs li:last-child::after {

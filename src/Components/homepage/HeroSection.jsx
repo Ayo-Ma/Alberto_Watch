@@ -20,14 +20,14 @@ const HeroSection = () => {
     {
       title: "Sport Watches",
       description: "Durable and stylish sport watches for every adventure.",
-      image: `${Image2}`,
+      image: `${Image1}`,
       buttonText: "Shop Sport",
       buttonLink: "/products/sports",
     },
     {
       title: "Smart Watches",
       description: "The latest in wearable technology.",
-      image: `${Image3}`,
+      image: `${Image1}`,
       buttonText: "Shop Smart",
       buttonLink: "/products/smart",
     },

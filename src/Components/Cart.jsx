@@ -1,6 +1,9 @@
 import { useCart } from "./CartContext";
 import "../Css/Cart.css";
 import EmptyCartSVG from "./EmptyCartSVG";
+import { MdAdd } from "react-icons/md";
+import { RiSubtractLine } from "react-icons/ri";
+import { MdOutlineDelete } from "react-icons/md";
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
@@ -14,10 +17,9 @@ const CartPage = () => {
 
   if (cartItems.length === 0) {
     return (
- <div className="cart-page">
+      <div className="cart-page">
         <EmptyCartSVG />
       </div>
-     
     );
   }
 
@@ -30,26 +32,39 @@ const CartPage = () => {
             <img src={item.image} alt={item.name} />
             <div className="cart-details">
               <h3>{item.name}</h3>
-              <p>Price: ${Number(item.price).toFixed(2)}</p>
-              <p>Total: ${(Number(item.price) * item.quantity).toFixed(2)}</p>
-              <div className="cart-quantity">
-                <button onClick={() => updateQuantity(item.id, -1)}>-</button>
-                <span>{item.quantity}</span>
-                <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+              <div className="quantity-price">
+                <p className="price">
+                  {" "}
+                  <span className="dollar-mark">$ </span>
+                  {Number(item.price).toFixed(2)}
+                </p>
+                <div className="cart-quantity">
+                  <button onClick={() => updateQuantity(item.id, -1)}>
+                    {" "}
+                    <RiSubtractLine />
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button onClick={() => updateQuantity(item.id, 1)}>
+                    <MdAdd />
+                  </button>
+                </div>
+                <button
+                  className="remove-btn"
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  <MdOutlineDelete />
+                </button>
               </div>
-              <button
-                className="remove-btn"
-                onClick={() => removeFromCart(item.id)}
-              >
-                Remove
-              </button>
             </div>
           </div>
         ))}
       </div>
       <div className="cart-summary">
-        <h3>Total Price:<span className="light">${getTotalPrice().toFixed(2)}</span></h3>
-        <button className="checkout-button">Proceed to Checkout</button>
+        <h3>
+          Total:
+          <span className="light">${getTotalPrice().toFixed(2)}</span>
+        </h3>
+        <button className="checkout-button">Checkout</button>
       </div>
     </div>
   );

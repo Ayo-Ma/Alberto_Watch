@@ -44,7 +44,7 @@
 }
 
 .product-info button {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
   color: #fff;
   border: none;
   padding: 12px 28px;
@@ -56,9 +56,13 @@
 }
 
 .product-info button:hover {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
 }
 
+.product-name{
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
 
 .technologies {
   grid-column: 1 / -1; 

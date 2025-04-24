@@ -41,11 +41,11 @@ const Featured = () => {
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
             <p>{product.description}</p>
-            <p><strong>Price:</strong> ${product.price}</p>
+            <p><strong className="accent">${product.price}</strong> </p>
             <div className="featured-actions">
-              <Link to={`/products/${product.category}/${product.id}`} className="details-btn">
+             {/*  <Link to={`/products/${product.category}/${product.id}`} className="details-btn">
                 Show Details
-              </Link>
+              </Link> */}
               <button
                 className="add-to-cart-btn"
                 onClick={() => handleAddToCart(product)}

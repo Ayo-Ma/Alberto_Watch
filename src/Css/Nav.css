@@ -20,8 +20,9 @@ padding-inline:20px;
 
     & a {
       color: #fff;
-      font-size: 1.2rem;
+      font-size: 1rem;
       text-decoration: underline;
+      font-weight: 400;
       text-underline-offset: 8px;
       text-decoration-thickness: 2px;
       text-decoration-color: #2b2b2b00;
@@ -101,7 +102,7 @@ nav {
   & .navlinks > li{
     margin: 0;
     & a{
-      color: black;
+      color:var(--secondary-color);
     }
   }
 }

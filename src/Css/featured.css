@@ -60,11 +60,15 @@
     gap: 10px;
   }
   
+  .accent{
+    color: var(--accent-color);
+  }
   .details-btn,
   .add-to-cart-btn {
     padding: 10px 20px;
+    width: 100%;
     font-size: 15px;
-    border-radius: 5px;
+border-radius: 8px;
     /* text-transform: uppercase; */
     cursor: pointer;
     transition: background-color 0.3s ease;

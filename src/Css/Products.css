@@ -32,13 +32,18 @@
   align-items: center;
   .product-link{
   font-size: 1rem;
+  margin-top: 24px;
   color: #fff;
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
   padding: 1rem;
   border-radius: 8px;
   display: inline-block;
   font-weight: 500;
   text-decoration: none;
+
+  &:hover{
+    background-color: var(--accent-color);
+  }
   }
 
   .category-slug-text{
@@ -85,7 +90,7 @@ overflow: hidden;
     }
   }
 
-  .category-list li{
+.category-list li{
 flex-direction: row;
 align-items: center;
 margin: 2rem 3rem;
