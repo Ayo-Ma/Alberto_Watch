@@ -1,489 +1,333 @@
-import { LuBadge, LuGlobe2, LuLightbulb } from "react-icons/lu";
+import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import "../Css/about-page.css";
+import { sectionVariants } from "../constants";
+
 import StoryImage from "../assets/albertowatchemaker.webp";
 import JohnAlberto from "../assets/john.webp";
 import IssacMary from "../assets/mary.webp";
-import { useLocation , Link} from "react-router-dom";
-import { sectionVariants } from "../constants";
 
-const Hero = () => (
-
-
-
-
-  
-  <motion.section
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  variants={sectionVariants}
-  className="hero" id="#hero">
-    <motion.h1
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    >About Us</motion.h1>
-    <motion.p
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    
-    >Empowering People with Premium, <span style={{color:"var(--accent-color)"}}>High-Quality Watches</span></motion.p>
-    <motion.p
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    
-    >
-      Your ultimate destination for luxury and technology-driven Watches that
-      combine elegance with innovation.
-    </motion.p>
-  </motion.section>
-);
-
-const Mission = () => (
-  <motion.section
-  
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  variants={sectionVariants}
-  
-  className="mission">
-    <motion.h2
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    >Our Mission</motion.h2>
-    <motion.p
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    
-    >
-      Our mission is to offer premium Watches that are not just functional but
-      also enhance your lifestyle. We strive to deliver a seamless experience
-      with top-notch quality and unmatched customer service, making your
-      everyday moments extraordinary.
-    </motion.p>
-  </motion.section>
-);
-
-const OurStory = () => (
-  <motion.section
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  variants={sectionVariants}
-  
-  className="our-story">
-    <motion.div className="our-story-intro">
-      <motion.h2
-       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-      
-      >Our Story</motion.h2>
-      <motion.p
-       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-      
-      
-      >
-        Founded in 1985, Alberto Watch began with a simple vision: to bring
-        luxury and technology closer to consumers. From our humble beginnings to
-        becoming a household name, we&apos;ve always focused on combining style,
-        innovation, and excellence. Our dedication to quality and customer
-        satisfaction has driven us to where we are today.
-      </motion.p>
-    </motion.div>
-
-    <img className="story-image" src={StoryImage} alt="Our Story" />
-  </motion.section>
-);
-
-const CoreValues = () => (
-  <section className="core-values">
-    <motion.h2
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    >Our Core Values</motion.h2>
-    <motion.div  
-     initial="hidden"
-     whileInView="visible"
-     viewport={{ once: true }}
-     transition={{ duration: 0.5 }}
-     variants={sectionVariants}
-    
-    className="core-value-card-flex">
-      {CoreValueCardData.map((card) => (
-        <CoreValuesCard
-          key={card.id}
-          title={card.title}
-          description={card.description}
-        />
-      ))}
-    </motion.div>
-  </section>
-);
-
-const CoreValueCardData = [
-  {
-    id: "001",
-    title: "Integrity",
-    description:
-      "We believe in doing the right thing, even when no one is watching.",
-  },
-  {
-    id: "002",
-    title: "Innovation",
-    description:
-      "We strive to push boundaries and bring cutting-edge solutions to our customers.",
-  },
-  {
-    id: "003",
-    title: "Quality",
-    description:
-      "We never compromise on quality, ensuring that every watch we sell is top-tier.",
-  },
-  {
-    id: "004",
-    title: "Customer Satisfaction",
-    description:
-      "Our customers are at the heart of everything we do, and we’re dedicated to meeting their needs.",
-  },
-];
-
-// eslint-disable-next-line react/prop-types
-const CoreValuesCard = ({ title, description }) => (
-  <motion.div 
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  variants={sectionVariants}
-  className="core-values-card">
-    <h4>{title}</h4>
-    <motion.p
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    
-    >{description}</motion.p>
-  </motion.div>
-);
-
-const Team = () => (
-  <section className="team">
-    <motion.h2
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    >Meet Our Team</motion.h2>
-    <motion.div className="team-member-cards">
-    <motion.div className="team-member">
-      
-      <img src={JohnAlberto} alt="John Alberto" />
-
-      <motion.div className="team-memeber-text">
-      <h3>John Alberto</h3>
-      <motion.p className="p-head">Founder & CEO</motion.p>
-      <motion.p
-       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-      
-      
-      >
-        John Alberto is the visionary behind Alberto Watch Company. A master
-        watchmaker who blends traditional craftsmanship with modern design,
-        John’s passion for horology drives the creation of timeless,
-        high-quality timepieces. His dedication to precision and innovation
-        ensures every watch is a piece of art, built to last for generations.
-      </motion.p>
-      </motion.div>
-    
-    </motion.div>
-    <motion.div className="team-member">
-      <img src={IssacMary} alt="Issac Mary" />
-      <motion.div className="team-memeber-text">
-      <h3>Issac Mary</h3>
-      <motion.p className="p-head">COO</motion.p>
-      <motion.p
-       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-      
-      
-      >
-        Jane is responsible for day-to-day operations, ensuring everything runs
-        smoothly and efficiently.
-      </motion.p>
-      </motion.div>
-     
-    </motion.div>
-    </motion.div>
-  </section>
-);
-
-const Achievements = () => (
-  <section className="achievements">
-    <motion.h2
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    >Our Achievements</motion.h2>
-    <ul>
-      <li>
-        <LuBadge className="achievement-icon" />
-       <motion.h2
-        initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-       
-       > 2022</motion.h2>
-       <motion.p
-        initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-       
-       
-       > Awarded Best Luxury Product of the Year</motion.p>
-      </li>
-      <li>
-        <LuLightbulb className="achievement-icon"/>
-       <motion.h2
-        initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-       
-       > 2021</motion.h2>
-       <motion.p
-        initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-       
-       
-       > Recognized as a top innovator in technology</motion.p>
-      </li>
-      <li>
-        <LuGlobe2 className="achievement-icon"/>
-       <motion.h2
-        initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-       
-       > 2020</motion.h2>
-       <motion.p
-        initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-       
-       
-       > Reached 1 million happy customers worldwide</motion.p> 
-      </li>
-    </ul>
-  </section>
-);
-
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-
-
-// Testimonial Data
-const testimonials = [
-  {
-    id: 1,
-    quote: "You change the way I see luxury Watches now. The quality is unmatched!",
-    name: "Mark Johnson"
-  },
-  {
-    id: 2,
-    quote: "The customer service is excellent. I highly recommend them!",
-    name: "Sarah Smith"
-  },
-  {
-    id: 3,
-    quote: "I love the craftsmanship and attention to detail. Worth every penny!",
-    name: "Gary Vee"
-  },
-  {
-    id: 4,
-    quote: "A truly remarkable experience. I am in awe of the design and functionality.",
-    name: "Alex Hormonzi"
-  }
-];
-
-const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [hovered, setHovered] = useState(false);
-
-
-  useEffect(() => {
-    if (!hovered) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-      }, 3000); 
-
-      return () => clearInterval(interval); 
-    }
-  }, [hovered]);
-
-  return (
-    <section className="testimonials">
-      <motion.h2
-       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-      
-      >What Our Customers Say</motion.h2>
-      <motion.div
-        className="testimonial-carousel"
-        onMouseEnter={() => setHovered(true)} 
-        onMouseLeave={() => setHovered(false)} 
-        style={{ position: "relative", overflow: "hidden" }}
-      >
-        <motion.div
-          className="carousel-inner"
-          initial={{ x: "100%" }}
-          animate={{ x: `-${currentIndex * 100}%` }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        >
-          {testimonials.map((testimonial) => (
-            <motion.div key={testimonial.id} className="testimonial-item">
-              <motion.p
-               initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-              
-              
-              >&quot;{testimonial.quote}&quot;</motion.p>
-              <motion.p
-               initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-              
-              
-              >- {testimonial.name}</motion.p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-    </section>
-  );
-};
-
-
-
-const CallToAction = () => (
-  <section className="about-cta">
-    <motion.h2
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    >Start Your Journey with Us</motion.h2>
-    <motion.p
-     initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      variants={sectionVariants}
-    
-    
-    >
-      Explore our range of Watches and experience the luxury and innovation we
-      offer. Join thousands of happy customers today!
-    </motion.p>
-    <Link to="/products" className="about-cta-btn">
-      Browse Our Products
-    </Link>
-  </section>
-);
+import {
+  LuBadgeCheck,
+  LuSparkles,
+  LuShieldCheck,
+  LuHeartHandshake,
+  LuChevronRight,
+} from "react-icons/lu";
 
 const About = () => {
-
   const location = useLocation();
-
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
 
+  const coreValues = useMemo(
+    () => [
+      {
+        id: "001",
+        icon: <LuShieldCheck aria-hidden="true" />,
+        title: "Integrity",
+        description: "No shortcuts. No fake specs. What you see is what you get.",
+      },
+      {
+        id: "002",
+        icon: <LuSparkles aria-hidden="true" />,
+        title: "Innovation",
+        description: "Modern tech where it matters—without losing timeless design.",
+      },
+      {
+        id: "003",
+        icon: <LuBadgeCheck aria-hidden="true" />,
+        title: "Quality",
+        description: "Materials, finishing, and performance—checked like it’s our name on it.",
+      },
+      {
+        id: "004",
+        icon: <LuHeartHandshake aria-hidden="true" />,
+        title: "Customer-first",
+        description: "Fast support. Clear policies. A brand that actually answers.",
+      },
+    ],
+    []
+  );
+
+  const achievements = useMemo(
+    () => [
+      { year: "2022", title: "Luxury Product of the Year", detail: "Recognized for design and finishing." },
+      { year: "2021", title: "Top Innovation Brand", detail: "For tech-forward wearables & durability." },
+      { year: "2020", title: "1M+ Customers", detail: "Trusted by collectors worldwide." },
+    ],
+    []
+  );
+
+  const testimonials = useMemo(
+    () => [
+      { id: 1, quote: "This changed the way I see premium watches. The finishing is insane.", name: "Mark Johnson" },
+      { id: 2, quote: "Customer service is fast, clear, and actually helpful.", name: "Sarah Smith" },
+      { id: 3, quote: "Craftsmanship is top-tier. Worth every penny.", name: "Gary Vee" },
+      { id: 4, quote: "Minimal design, serious presence. It just feels expensive.", name: "Alex Hormozi" },
+    ],
+    []
+  );
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    if (hovered) return;
+    const t = setInterval(() => setCurrentIndex((i) => (i + 1) % testimonials.length), 3500);
+    return () => clearInterval(t);
+  }, [hovered, testimonials.length]);
+
   return (
-    <motion.div className="about-us">
-      <Hero />
-      <Mission />
-      <OurStory />
-      <CoreValues />
-      <Team />
-      <Achievements />
-      <Testimonials />
-      <CallToAction />
-    </motion.div>
+    <main className="about">
+      {/* HERO */}
+      <motion.section
+        className="about__hero"
+        id="hero"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        variants={sectionVariants}
+      >
+        <div className="about__heroInner">
+          <p className="about__eyebrow">About Alberto</p>
+          <h1 className="about__title">Built for time. Designed for presence.</h1>
+          <p className="about__subtitle">
+            We create premium watches that feel effortless—clean design, dependable performance,
+            and the kind of quality you notice every time you wear it.
+          </p>
+
+          <div className="about__heroCtas">
+            <Link className="about__btn about__btn--primary" to="/products">
+              Browse watches <LuChevronRight aria-hidden="true" />
+            </Link>
+            <Link className="about__btn about__btn--ghost" to="/support#contact">
+              Contact support
+            </Link>
+          </div>
+        </div>
+      </motion.section>
+
+      <div className="about__container">
+        {/* MISSION */}
+        <motion.section
+          className="about__panel"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={sectionVariants}
+        >
+          <div className="about__panelHeader">
+            <h2 className="about__h2">Our Mission</h2>
+            <p className="about__p">
+              To build watches that upgrade your daily life—reliable, premium, and made to last.
+              No noise. Just quality you can trust.
+            </p>
+          </div>
+
+          <div className="about__highlights">
+            <div className="highlight">
+              <p className="highlight__title">Design-first</p>
+              <p className="highlight__text">Minimal shapes, strong presence, zero clutter.</p>
+            </div>
+            <div className="highlight">
+              <p className="highlight__title">Built to last</p>
+              <p className="highlight__text">Durability and comfort you feel every day.</p>
+            </div>
+            <div className="highlight">
+              <p className="highlight__title">Service that shows up</p>
+              <p className="highlight__text">Clear policies and support that responds.</p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* STORY */}
+        <motion.section
+          className="about__story"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={sectionVariants}
+        >
+          <div className="about__storyText">
+            <h2 className="about__h2">Our Story</h2>
+            <p className="about__p">
+              Founded in 1985, Alberto started with one obsession: build watches that look clean,
+              feel premium, and perform like a tool—not a toy.
+            </p>
+
+            <ul className="about__bullets">
+              <li><span className="dot" /> Craftsmanship-first manufacturing</li>
+              <li><span className="dot" /> Modern materials, timeless design</li>
+              <li><span className="dot" /> Trusted by collectors and everyday wearers</li>
+            </ul>
+          </div>
+
+          <div className="about__storyMedia">
+            <img src={StoryImage} alt="Watchmaking craftsmanship" />
+          </div>
+        </motion.section>
+
+        {/* CORE VALUES */}
+        <motion.section
+          className="about__values"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={sectionVariants}
+        >
+          <header className="about__sectionHeader">
+            <h2 className="about__h2">Core Values</h2>
+            <p className="about__p">The standards we won’t compromise—ever.</p>
+          </header>
+
+          <div className="about__valueGrid">
+            {coreValues.map((v) => (
+              <div key={v.id} className="valueCard">
+                <div className="valueCard__icon">{v.icon}</div>
+                <h3 className="valueCard__title">{v.title}</h3>
+                <p className="valueCard__text">{v.description}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* TEAM */}
+        <motion.section
+          className="about__team"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={sectionVariants}
+        >
+          <header className="about__sectionHeader">
+            <h2 className="about__h2">Meet the Team</h2>
+            <p className="about__p">Small team. Serious standards.</p>
+          </header>
+
+          <div className="about__teamList">
+            <div className="person">
+              <img src={JohnAlberto} alt="John Alberto" />
+              <div className="person__text">
+                <div className="person__top">
+                  <h3>John Alberto</h3>
+                  <span className="person__role">Founder & CEO</span>
+                </div>
+                <p>
+                  Master watchmaker focused on precision, finishing, and design discipline.
+                  Every model starts with: “Would I wear this daily for 5 years?”
+                </p>
+              </div>
+            </div>
+
+            <div className="person">
+              <img src={IssacMary} alt="Issac Mary" />
+              <div className="person__text">
+                <div className="person__top">
+                  <h3>Issac Mary</h3>
+                  <span className="person__role">COO</span>
+                </div>
+                <p>
+                  Keeps operations tight: sourcing, quality checks, fulfillment, and customer experience.
+                  The goal is simple—no excuses, just consistency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* ACHIEVEMENTS */}
+        <motion.section
+          className="about__achievements"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={sectionVariants}
+        >
+          <header className="about__sectionHeader">
+            <h2 className="about__h2">Milestones</h2>
+            <p className="about__p">Progress you can measure.</p>
+          </header>
+
+          <div className="about__stats">
+            {achievements.map((a) => (
+              <div key={a.year} className="stat">
+                <p className="stat__year">{a.year}</p>
+                <p className="stat__title">{a.title}</p>
+                <p className="stat__detail">{a.detail}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* TESTIMONIALS */}
+        <motion.section
+          className="about__testimonials"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={sectionVariants}
+        >
+          <header className="about__sectionHeader about__sectionHeader--center">
+            <h2 className="about__h2">What customers say</h2>
+            <p className="about__p">Real reactions. No marketing fluff.</p>
+          </header>
+
+          <div
+            className="quote"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            <p className="quote__text">“{testimonials[currentIndex].quote}”</p>
+            <p className="quote__name">— {testimonials[currentIndex].name}</p>
+
+            <div className="quote__dots" aria-label="testimonial pagination">
+              {testimonials.map((t, i) => (
+                <button
+                  key={t.id}
+                  className={`dotBtn ${i === currentIndex ? "dotBtn--active" : ""}`}
+                  onClick={() => setCurrentIndex(i)}
+                  aria-label={`View testimonial ${i + 1}`}
+                  type="button"
+                />
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* CTA */}
+        <motion.section
+          className="about__cta"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={sectionVariants}
+        >
+          <div className="about__ctaInner">
+            <h2 className="about__h2">Ready to find your next daily wear?</h2>
+            <p className="about__p">
+              Explore luxury, smart, sport, and vintage collections—designed to look clean and feel premium.
+            </p>
+            <Link className="about__btn about__btn--primary" to="/products">
+              Browse products <LuChevronRight aria-hidden="true" />
+            </Link>
+          </div>
+        </motion.section>
+      </div>
+    </main>
   );
 };
 

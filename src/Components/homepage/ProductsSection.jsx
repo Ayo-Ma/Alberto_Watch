@@ -14,77 +14,88 @@ const products = [
     id: 1,
     image: LuxuryImages,
     title: "Luxury Watches",
-    description: "Elegant designs crafted for sophistication.",
+    description: "Signature pieces for events, work, and everyday status.",
     link: "products/luxury",
-    bgImage: `url(${bg1})`,
+    bgImage: bg1,
+    badge: "Best sellers",
   },
   {
     id: 2,
     image: VintageImages,
     title: "Vintage Watches",
-    description: "Timeless pieces with a story to tell.",
+    description: "Timeless classics—restored, authenticated, and ready to wear.",
     link: "products/vintage",
-    bgImage: `url(${bg2})`,
+    bgImage: bg2,
+    badge: "Collector picks",
   },
   {
     id: 3,
     image: SmartImages,
     title: "Smart Watches",
-    description: "The perfect fusion of cutting-edge technology and timeless design.",
+    description: "Modern features with a premium look—no “techy” plastic vibe.",
     link: "products/smart",
-    bgImage: `url(${bg3})`,
+    bgImage: bg3,
+    badge: "New arrivals",
   },
   {
     id: 4,
     image: SmartImages,
     title: "Sport Watches",
-    description: "Built for durability and performance in every adventure",
+    description: "Built for movement—durable, precise, and comfortable.",
     link: "products/sports",
-    bgImage: `url(${bg4})`,
+    bgImage: bg4,
+    badge: "Performance",
   },
 ];
 
 const ProductsSection = () => {
   return (
-    <section className="products-section">
-      <div className="products-intro">
-        <h3>
-         Explore the World of Watches
-        </h3>
+    <section className="products-section" aria-labelledby="products-title">
+      <div className="products-header">
+        <div className="products-headline">
+          <p className="products-eyebrow">Collections</p>
+          <h2 id="products-title">Find your next watch in seconds.</h2>
+          <p className="products-subtitle">
+            Browse by style. Each category is curated—so you spend less time scrolling and more time choosing.
+          </p>
+        </div>
+
+        <Link to="/products" className="btn btn-primary products-top-cta">
+          Browse all watches <LuChevronRight className="chev" />
+        </Link>
       </div>
-      <div className="products-container">
+
+      <div className="products-grid">
         {products.map((product) => (
-          <div
-            key={product.id}
-            className="category"
-            style={{ backgroundImage: product.bgImage }}
-          >
-            <div className="cat-text">
-              <h3>{product.title}</h3>
-              <p>{product.description}</p>
-              <Link to={product.link} className="btn">
-                View More{" "}
-                <LuChevronRight
-                  className="right-arrow"
-                  style={{ fontSize: "2rem" }}
-                />
+          <article key={product.id} className="product-card">
+            <div
+              className="product-bg"
+              style={{ backgroundImage: `url(${product.bgImage})` }}
+              aria-hidden="true"
+            />
+
+            <div className="product-content">
+              <span className="product-badge">{product.badge}</span>
+              <h3 className="product-title">{product.title}</h3>
+              <p className="product-desc">{product.description}</p>
+
+              <Link to={`/${product.link}`} className="btn btn-ghost product-link">
+                Shop this collection <LuChevronRight className="chev" />
               </Link>
             </div>
-            <div className="image-cont">
-              <img src={product.image} alt={product.title} />
+
+            <div className="product-media" aria-hidden="true">
+              <img src={product.image} alt="" />
             </div>
-          </div>
+          </article>
         ))}
       </div>
-      <div className="cta">
-        <Link to="/products" className="btn-primary">
-          Browse All Watches
-          <LuChevronRight
-            className="right-arrow"
-            style={{ fontSize: "2rem" }}
-          />
+
+      <div className="products-bottom-cta">
+        <Link to="/products" className="btn btn-primary">
+          Browse all watches <LuChevronRight className="chev" />
         </Link>
-      </div>{" "}
+      </div>
     </section>
   );
 };

@@ -9,66 +9,87 @@ const categories = [
     name: "Luxury Watches",
     slug: "luxury",
     description:
-      "Indulge in the epitome of sophistication with our luxury watch collection. Crafted with precision and adorned with exquisite materials, these timepieces are designed for those who seek unparalleled style and quality.",
+      "Refined pieces built for milestones, meetings, and everyday status—crafted with premium finishes and clean detail.",
     bgImageUrl: bg1,
   },
   {
     name: "Sports Watches",
     slug: "sports",
     description:
-      "Engineered for durability and performance, our sports watches are the perfect companion for every adventure. Whether you're scaling mountains or diving deep, these rugged yet stylish watches are up for the challenge.",
+      "Made for movement. Durable, comfortable, and precise—built to keep up without looking bulky.",
     bgImageUrl: bg2,
   },
   {
     name: "Smart Watches",
     slug: "smart",
     description:
-      "Stay connected, track your fitness, and elevate your tech game with our smart watch collection. Combining cutting-edge technology with sleek designs, these watches are perfect for the modern lifestyle.",
+      "Modern features in a watch you’ll actually want to wear—clean design, practical tracking, effortless everyday use.",
     bgImageUrl: bg3,
   },
   {
     name: "Vintage Watches",
     slug: "vintage",
     description:
-      "Celebrate timeless craftsmanship with our vintage watch collection. Each piece tells a story, blending classic designs with enduring quality to bring history to life on your wrist",
-    bgImageUrl:bg4,
+      "Classic designs with character. Timeless proportions, heritage styling, and the kind of details you don’t see today.",
+    bgImageUrl: bg4,
   },
 ];
 
 const Products = () => {
   return (
-    <div className="all-products">
-      <div className="products-hero">
-        <h1>Discover Your Perfect Watch, <br /> One Tick at a Time</h1>
-        <p>
-          From luxury to vintage, explore timeless designs crafted to match your
-          style.
+    <main className="categoryPage">
+      <header className="categoryPage__hero">
+        <div className="categoryPage__heroInner">
+          <p className="categoryPage__eyebrow">Collections</p>
+          <h1 className="categoryPage__title">
+            Find the watch that fits your life.
+          </h1>
+          <p className="categoryPage__subtitle">
+            Explore curated categories—from refined luxury to rugged sport.
+          </p>
+        </div>
+      </header>
 
-        </p>
-      </div>
-      <ul className="category-list">
-        {categories.map((category) => (
-          <li
-            key={category.slug}
-            // style={{ background:category.bgImageUrl }}
-          >
-
-            <div className="image"> 
-              <img src={category.bgImageUrl} alt={category.name} />
-            </div>
-            <div className="category-slug-text">
-              <h2>{category.name}</h2>
-              <p>{category.description}</p>
-              <Link className="product-link" to={`/products/${category.slug}`}>
-                Shop {category.name}
-              </Link>
+      <section className="categoryPage__section">
+        <ul className="categoryGrid" role="list">
+          {categories.map((category) => (
+            <li key={category.slug} className="categoryCard" role="listitem">
+              <div className="categoryCard__media">
+                <img
+                  src={category.bgImageUrl}
+                  alt={category.name}
+                  loading="lazy"
+                />
               </div>
-              
-            
-          </li>
-        ))}
-      </ul>
-    </div>
+
+              <div className="categoryCard__content">
+                <h2 className="categoryCard__title">{category.name}</h2>
+                <p className="categoryCard__desc">{category.description}</p>
+
+                <div className="categoryCard__meta">
+                  <span>Curated picks</span>
+                  <span className="dot" aria-hidden="true">
+                    •
+                  </span>
+                  <span>Fast delivery</span>
+                  <span className="dot" aria-hidden="true">
+                    •
+                  </span>
+                  <span>Easy returns</span>
+                </div>
+
+                <Link
+                  className="categoryCard__cta"
+                  to={`/products/${category.slug}`}
+                >
+                  Shop {category.name}
+                </Link>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 };
 

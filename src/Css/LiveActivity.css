@@ -1,0 +1,61 @@
+.live-activity {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(43, 43, 43, 0.92);
+  color: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  z-index: 1200;
+  animation: slideIn 0.4s ease;
+}
+
+.live-activity .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e; /* subtle live indicator */
+}
+
+.live-activity .text {
+  white-space: nowrap;
+}
+
+.live-activity .close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.live-activity .close:hover {
+  color: #fff;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile safety */
+@media (max-width: 480px) {
+  .live-activity {
+    right: 0.8rem;
+    left: 0.8rem;
+    justify-content: center;
+  }
+}

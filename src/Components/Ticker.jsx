@@ -1,75 +1,68 @@
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
+import "../Css/ScrollingTicker.css";
+
+const messages = [
+  "Free strap sizing on every order.",
+  "2-year warranty on all watches.",
+  "Need help? Visit Support →",
+  "New drops weekly. Stay sharp.",
+];
 
 const ScrollingTicker = () => {
-  const [dateTime, setDateTime] = useState("");
-  const [location, setLocation] = useState("Fetching location...");
+  const [now, setNow] = useState(new Date());
+  const [dismissed, setDismissed] = useState(false);
 
-  // Update the date and time
   useEffect(() => {
-    const updateTime = setInterval(() => {
-      const now = new Date();
-      setDateTime(now.toLocaleString());
-    }, 1000);
-    return () => clearInterval(updateTime);
+    const t = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(t);
   }, []);
 
-  // Fetch user location
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setLocation(`Lat: ${latitude.toFixed(2)}, Lng: ${longitude.toFixed(2)}`);
-        },
-        () => {
-          setLocation("Location access denied");
-        }
-      );
-    } else {
-      setLocation("Geolocation not supported");
-    }
-  }, []);
+  const timeText = useMemo(() => {
+    // Make it look premium: “Tue, 13 Jan • 03:05”
+    return new Intl.DateTimeFormat(undefined, {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(now);
+  }, [now]);
+
+  if (dismissed) return null;
 
   return (
-    <div style={styles.tickerContainer}>
-      <div style={styles.tickerContent}>
-        <span>
-          🕒 {dateTime} | 📍 {location} | Stay updated with Alberto Watch Company!
-        </span>
+    <div className="ticker" role="region" aria-label="Store updates">
+      <div className="ticker__inner">
+        <div className="ticker__left">
+          <span className="ticker__pill">Live</span>
+          <span className="ticker__time">{timeText}</span>
+        </div>
+
+        <div className="ticker__marquee" aria-hidden="true">
+          <div className="ticker__track">
+            {/* duplicate for seamless loop */}
+            {[...messages, ...messages].map((m, idx) => (
+              <span className="ticker__item" key={`${m}-${idx}`}>
+                {m}
+                <span className="ticker__dot" />
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="ticker__right">
+          <button
+            type="button"
+            className="ticker__close"
+            onClick={() => setDismissed(true)}
+            aria-label="Dismiss updates"
+          >
+            Dismiss
+          </button>
+        </div>
       </div>
     </div>
   );
 };
-
-const styles = {
-  tickerContainer: {
-    position: "fixed",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    backgroundColor: "#222",
-    color: "#fff",
-    overflow: "hidden",
-    zIndex: 2000,
-    whiteSpace: "nowrap",
-    fontSize: "16px",
-    padding: "10px 0",
-  },
-  tickerContent: {
-    display: "inline-block",
-    paddingLeft: "100%", // Start off-screen
-    animation: "scroll-left 15s linear infinite",
-  },
-};
-
-// Add the scrolling keyframe animation dynamically
-const styleSheet = document.styleSheets[0];
-styleSheet.insertRule(
-  `@keyframes scroll-left {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-  }`,
-  styleSheet.cssRules.length
-);
 
 export default ScrollingTicker;

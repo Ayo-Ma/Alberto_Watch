@@ -1,47 +1,102 @@
-.breadcrumbs {
-    background-color: #f4f4f4;
-    padding: 16px 20px;
-    border-radius: 8px;
-    /* margin-bottom: 20px; */
-    font-family: "Arial", sans-serif;
+
+.bc {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+}
+
+.bc__list {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+ 
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.bc__list::-webkit-scrollbar {
+  display: none;
+}
+
+.bc__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+  color: rgba(17, 24, 39, 0.62); /* dark gray, not pure black */
+  font-size: 0.92rem;
+}
+
+.bc__sep {
+  font-size: 1.05rem;
+  color: rgba(17, 24, 39, 0.35);
+  flex: 0 0 auto;
+}
+
+.bc__link {
+  color: rgba(17, 24, 39, 0.72);
+  text-decoration: none;
+  padding: 0.25rem 0.4rem;
+  border-radius: 10px;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.bc__link:hover {
+  background: rgba(17, 24, 39, 0.06);
+  color: rgba(17, 24, 39, 0.92);
+}
+
+.bc__link:active {
+  transform: translateY(1px);
+}
+
+.bc__link:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.35);
+  outline-offset: 3px;
+}
+
+.bc__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.bc__icon {
+  font-size: 1.05rem;
+  color: rgba(17, 24, 39, 0.55);
+}
+
+.bc__homeText {
+  font-weight: 600;
+}
+
+.bc__current {
+  color: rgba(17, 24, 39, 0.95);
+  font-weight: 650;
+  padding: 0.25rem 0.4rem;
+  border-radius: 10px;
+
+ 
+  max-width: 42vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 520px) {
+  .bc {
+    padding: 0.75rem 1rem;
   }
-  
-  .breadcrumbs ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+  .bc__homeText {
+    display: none; 
   }
-  
-  .breadcrumbs li {
-    margin-right: 10px;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-    color: #555;
+
+  .bc__current {
+    max-width: 62vw;
   }
-  
-  .breadcrumbs li a {
-    text-decoration: none;
-    color: var(--accent-color);
-    transition: color 0.3s;
-  }
-  
-  .breadcrumbs li a:hover {
-    color: #0056b3;
-  }
-  
-  .breadcrumb-active {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .breadcrumbs li::after {
-    content: "/";
-    margin-left: 10px;
-    color: #aeaeae;
-  }
-  
-  .breadcrumbs li:last-child::after {
-    content: "";
-  }
-  
+}

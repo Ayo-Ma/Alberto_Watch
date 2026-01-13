@@ -5,7 +5,6 @@ import Footer from "./Components/homepage/Footer";
 import Products from "./Pages/Products";
 import Support from "./Pages/Support";
 import Page404 from "./Pages/Page404";
-import VisitorCount from "./Components/VisitorCount";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StoreLocator from "./Pages/StoreLocator";
@@ -17,10 +16,11 @@ import Blogs from "./Components/Blogs";
 import BlogDetails from "./Components/BlogDetails";
 import Policies from "./Components/Policies";
 import Ticker from './Components/Ticker'
+import LiveActivity from "./Components/LiveActivity";
 function App() {
   return (
     <>
-      <VisitorCount />
+      <LiveActivity />
       <BrowserRouter>
         <Header />
         <Breadcrumbs />

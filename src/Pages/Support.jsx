@@ -1,316 +1,447 @@
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import "../Css/SupportPage.css";
 import { sectionVariants } from "../constants";
-import { ToastContainer, toast } from "react-toastify"; 
+import { ToastContainer, toast } from "react-toastify";
 import { Link, useLocation } from "react-router-dom";
 
+import {
+  LuSearch,
+  LuMail,
+  LuPhone,
+  LuCalendar,
+  LuMapPin,
+  LuChevronDown,
+  LuArrowUpRight,
+} from "react-icons/lu";
+
 const SupportPage = () => {
-
-
   const location = useLocation();
 
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
 
+  // simple “FAQ search” (instant filtering)
+  const [query, setQuery] = useState("");
+  const [openId, setOpenId] = useState(null);
 
+  const faqs = useMemo(
+    () => [
+      {
+        id: "returns",
+        q: "How do returns work?",
+        a: "You can return unworn items within 14 days. Keep the packaging and proof of purchase. For steps, see the Returns section in Policies.",
+        linkText: "Read returns policy",
+        linkTo: "/policies#return-policy",
+      },
+      {
+        id: "shipping",
+        q: "How long does delivery take?",
+        a: "Orders usually ship within 24–48 hours. Delivery time depends on your location and courier availability.",
+        linkText: "Shipping policy",
+        linkTo: "/policies#shipping-policy",
+      },
+      {
+        id: "warranty",
+        q: "What does the warranty cover?",
+        a: "We offer a 2-year warranty for manufacturing defects. It doesn’t cover accidental damage or water damage outside rated resistance.",
+        linkText: "Warranty details",
+        linkTo: "/policies#warranty-policy",
+      },
+      {
+        id: "tracking",
+        q: "How do I track my order?",
+        a: "If you have an order number, you’ll see tracking updates as soon as the courier scans the package.",
+        linkText: "Go to orders",
+        linkTo: "/orders",
+      },
+    ],
+    []
+  );
 
+  const filteredFaqs = faqs.filter((f) => {
+    const text = `${f.q} ${f.a}`.toLowerCase();
+    return text.includes(query.toLowerCase().trim());
+  });
 
+  // Contact form
+  const [contact, setContact] = useState({ name: "", email: "", message: "" });
 
-  const [contactFormVisible, setContactFormVisible] = useState(false);
-  const [feedbackVisible, setFeedbackVisible] = useState(false);
-  const [contactFormData, setContactFormData] = useState({
-    name: "",
+  // Booking / call form (wire later)
+  const [booking, setBooking] = useState({
+    fullName: "",
     email: "",
-    message: "",
+    phone: "",
+    type: "visit", // visit | call
+    date: "",
+    note: "",
   });
-  const [feedbackData, setFeedbackData] = useState({
-    rating: "",
-    comments: "",
-  });
 
-  const toggleContactForm = () => {
-    setContactFormVisible(!contactFormVisible);
-  };
-
-  const toggleFeedback = () => {
-    setFeedbackVisible(!feedbackVisible);
-  };
-
- 
-  const showToast = (message) => {
+  const showToast = (message) =>
     toast.success(message, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2500,
       hideProgressBar: true,
     });
-  };
 
+  const showError = (message) => toast.error(message, { position: "top-right" });
 
-  const validateContactForm = () => {
-    const { name, email, message } = contactFormData;
-    if (!name || !email || !message) {
-      toast.error("Please fill in all fields.");
-      return false;
-    }
-    return true;
-  };
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-
-  const handleContactFormSubmit = (e) => {
+  const submitContact = (e) => {
     e.preventDefault();
-    if (validateContactForm()) {
-   
-      showToast("Message sent successfully!");
-      setContactFormData({ name: "", email: "", message: "" });
-    }
+    if (!contact.name || !contact.email || !contact.message) return showError("Please fill in all fields.");
+    if (!emailRegex.test(contact.email)) return showError("Enter a valid email address.");
+    showToast("Message received. We’ll reply within 24 hours.");
+    setContact({ name: "", email: "", message: "" });
   };
 
- 
-  const validateFeedbackForm = () => {
-    const { rating, comments } = feedbackData;
-    if (!rating || !comments) {
-      toast.error("Please provide a rating and comments.");
-      return false;
-    }
-    return true;
-  };
-
-  const handleFeedbackFormSubmit = (e) => {
+  const submitBooking = (e) => {
     e.preventDefault();
-    if (validateFeedbackForm()) {
-      
-      showToast("Thank you for your feedback!");
-      setFeedbackData({ rating: "", comments: "" });
-    }
+    if (!booking.fullName || !booking.email) return showError("Name and email are required.");
+    if (!emailRegex.test(booking.email)) return showError("Enter a valid email address.");
+    if (booking.type === "call" && !booking.phone) return showError("Phone number is required for a call.");
+    if (booking.type === "visit" && !booking.date) return showError("Choose a preferred date for your visit.");
+    showToast(booking.type === "visit" ? "Request sent. We’ll confirm your visit soon." : "Request sent. We’ll call you soon.");
+    setBooking({ fullName: "", email: "", phone: "", type: "visit", date: "", note: "" });
   };
 
   return (
-    <div className="support-page">
-      <div className="support-hero">
-        <motion.h1
-          className="support-title"
+    <main className="support">
+      {/* HERO */}
+      <section className="support__hero">
+        <div className="support__heroInner">
+          <motion.h1
+            className="support__title"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5 }}
+            variants={sectionVariants}
+          >
+            Support, without the runaround.
+          </motion.h1>
+          <p className="support__subtitle">
+            Find answers fast, or reach a real person. Book a showroom visit or request a call in seconds.
+          </p>
+
+          <div className="support__search" role="search" aria-label="Search support">
+            <LuSearch className="support__searchIcon" aria-hidden="true" />
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search returns, warranty, shipping…"
+              type="search"
+              aria-label="Search FAQs"
+            />
+          </div>
+
+          <div className="support__quick">
+            <a className="support__quickCard" href="#book-visit">
+              <LuCalendar aria-hidden="true" />
+              <div>
+                <p className="support__quickTitle">Book a visit</p>
+                <p className="support__quickText">Get priority service in-store.</p>
+              </div>
+            </a>
+
+            <a className="support__quickCard" href="#book-visit">
+              <LuPhone aria-hidden="true" />
+              <div>
+                <p className="support__quickTitle">Request a call</p>
+                <p className="support__quickText">We’ll help you choose the right watch.</p>
+              </div>
+            </a>
+
+            <a className="support__quickCard" href="#contact">
+              <LuMail aria-hidden="true" />
+              <div>
+                <p className="support__quickTitle">Message support</p>
+                <p className="support__quickText">We reply within 24 hours.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div className="support__container">
+        {/* FAQ */}
+        <motion.section
+          className="support__section"
+          id="faq"
           initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5 }}
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
           variants={sectionVariants}
         >
-          Support Center
-        </motion.h1>
-      </div>
+          <header className="support__sectionHeader">
+            <h2 className="support__h2">FAQs</h2>
+            <p className="support__p">Clear answers to the questions people actually ask.</p>
+          </header>
 
-      <motion.section
-        className="faq"
-        id="faq"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        variants={sectionVariants}
-      >
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-          <li>
-            <strong>How do I return a product?</strong>
-            <p>
-              To return a product, please visit our{" "}
-              <Link to="/returns">Returns</Link> page for instructions.
-            </p>
-          </li>
-          <li>
-            <strong>How can I track my order?</strong>
-            <p>
-              You can track your order by visiting your{" "}
-              <Link to="/orders">Order History</Link>.
-            </p>
-          </li>
-          <li>
-            <strong>What is the warranty on your products?</strong>
-            <p>
-              Our watches come with a 2-year warranty, which covers
-              manufacturing defects. Learn more on our{" "}
-              <Link to="/policies#warranty-policy">Warranty</Link> page.
-            </p>
-          </li>
-        </ul>
-        <button onClick={toggleContactForm} className="contact-btn">
-          Need More Help? Contact Us
-        </button>
-      </motion.section>
+          <div className="support__faq">
+            {filteredFaqs.length === 0 ? (
+              <div className="support__empty">
+                <p className="support__emptyTitle">No matches.</p>
+                <p className="support__emptyText">Try “returns”, “shipping”, or “warranty”.</p>
+              </div>
+            ) : (
+              filteredFaqs.map((f) => {
+                const isOpen = openId === f.id;
+                return (
+                  <div key={f.id} className={`faqItem ${isOpen ? "faqItem--open" : ""}`}>
+                    <button
+                      className="faqItem__btn"
+                      type="button"
+                      onClick={() => setOpenId(isOpen ? null : f.id)}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="faqItem__q">{f.q}</span>
+                      <LuChevronDown className="faqItem__chev" aria-hidden="true" />
+                    </button>
 
- 
-      <motion.section
-        className="knowledge-base"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        variants={sectionVariants}
-      >
-        <h2>Knowledge Base</h2>
-        <p>Explore helpful articles on how to care for your watch, set time zones, and more:</p>
-        <ul>
-          <li><Link to="/blog/1">How to Take Care of Your Watch</Link></li>
-          <li><Link to="/blog/2">Setting Time Zones on Your Watch</Link></li>
-          <li><Link to="/blog/3">Cleaning Tips for Your Watch</Link></li>
-        </ul>
-      </motion.section>
+                    {isOpen && (
+                      <div className="faqItem__panel">
+                        <p className="faqItem__a">{f.a}</p>
+                        <Link className="faqItem__link" to={f.linkTo}>
+                          {f.linkText} <LuArrowUpRight aria-hidden="true" />
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </motion.section>
 
-
-      <motion.section
-        className="feedback-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        variants={sectionVariants}
-      >
-        <button onClick={toggleFeedback} className="accordion-btn">
-          {feedbackVisible ? "Hide Feedback Form" : "Leave Feedback"}
-        </button>
-        <motion.div
+        {/* BOOK VISIT / REQUEST CALL */}
+        <motion.section
+          className="support__section"
+          id="book-visit"
           initial="hidden"
-          animate={feedbackVisible ? "visible" : "hidden"}
-          variants={{
-            hidden: { height: 0, opacity: 0 },
-            visible: { height: "auto", opacity: 1 },
-          }}
-          transition={{ duration: 0.3 }}
-          style={{ overflow: "hidden" }}
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          variants={sectionVariants}
         >
-          {feedbackVisible && (
-            <div className="feedback-content">
-              <h2>Feedback</h2>
-              <form onSubmit={handleFeedbackFormSubmit}>
-                <label>
-                  Rate Us
+          <header className="support__sectionHeader">
+            <h2 className="support__h2">Book a visit or request a call</h2>
+            <p className="support__p">
+              Short form. No back-and-forth. We confirm by email.
+            </p>
+          </header>
+
+          <div className="support__grid">
+            <form className="formCard" onSubmit={submitBooking} aria-label="Book a visit or request a call">
+              <div className="formCard__row">
+                <label className="formCard__label">
+                  Type
                   <select
-                    value={feedbackData.rating}
-                    onChange={(e) =>
-                      setFeedbackData({
-                        ...feedbackData,
-                        rating: e.target.value,
-                      })
-                    }
+                    className="formCard__field"
+                    value={booking.type}
+                    onChange={(e) => setBooking((p) => ({ ...p, type: e.target.value }))}
                   >
-                    <option value="">--Select Rating--</option>
-                    <option value="1">1 - Poor</option>
-                    <option value="2">2 - Fair</option>
-                    <option value="3">3 - Good</option>
-                    <option value="4">4 - Very Good</option>
-                    <option value="5">5 - Excellent</option>
+                    <option value="visit">Showroom visit</option>
+                    <option value="call">Phone call</option>
                   </select>
                 </label>
-                <label>
-                  Comments
-                  <textarea
-                    value={feedbackData.comments}
-                    onChange={(e) =>
-                      setFeedbackData({
-                        ...feedbackData,
-                        comments: e.target.value,
-                      })
-                    }
-                    placeholder="Your Feedback"
-                    rows="5"
+
+                {booking.type === "visit" ? (
+                  <label className="formCard__label">
+                    Preferred date
+                    <input
+                      className="formCard__field"
+                      type="date"
+                      value={booking.date}
+                      onChange={(e) => setBooking((p) => ({ ...p, date: e.target.value }))}
+                    />
+                  </label>
+                ) : (
+                  <label className="formCard__label">
+                    Phone number
+                    <input
+                      className="formCard__field"
+                      type="tel"
+                      placeholder="+234..."
+                      value={booking.phone}
+                      onChange={(e) => setBooking((p) => ({ ...p, phone: e.target.value }))}
+                    />
+                  </label>
+                )}
+              </div>
+
+              <div className="formCard__row">
+                <label className="formCard__label">
+                  Full name
+                  <input
+                    className="formCard__field"
+                    type="text"
+                    placeholder="Your name"
+                    value={booking.fullName}
+                    onChange={(e) => setBooking((p) => ({ ...p, fullName: e.target.value }))}
                   />
                 </label>
-                <button type="submit">Submit Feedback</button>
-              </form>
+
+                <label className="formCard__label">
+                  Email
+                  <input
+                    className="formCard__field"
+                    type="email"
+                    placeholder="you@email.com"
+                    value={booking.email}
+                    onChange={(e) => setBooking((p) => ({ ...p, email: e.target.value }))}
+                  />
+                </label>
+              </div>
+
+              <label className="formCard__label">
+                What do you need help with?
+                <textarea
+                  className="formCard__field formCard__field--area"
+                  rows={4}
+                  placeholder="Example: I want a durable sports watch under $300…"
+                  value={booking.note}
+                  onChange={(e) => setBooking((p) => ({ ...p, note: e.target.value }))}
+                />
+              </label>
+
+              <button className="formCard__cta" type="submit">
+                Send request
+              </button>
+
+              <p className="formCard__micro">
+                We respond within 24 hours. Appointments get priority service.
+              </p>
+            </form>
+
+            <div className="infoCard" aria-label="Store information">
+              <h3 className="infoCard__title">Showroom location</h3>
+              <p className="infoCard__text">
+                Banana Island, Lagos. If you’re coming for a specific model, book ahead so we can reserve it.
+              </p>
+
+              <div className="infoCard__rows">
+                <div className="infoCard__row">
+                  <LuMapPin aria-hidden="true" />
+                  <div>
+                    <p className="infoCard__label">Address</p>
+                    <p className="infoCard__value">106 Close, Banana Island, Eti Osa 101003, Lagos</p>
+                  </div>
+                </div>
+
+                <div className="infoCard__row">
+                  <LuCalendar aria-hidden="true" />
+                  <div>
+                    <p className="infoCard__label">Hours</p>
+                    <p className="infoCard__value">Mon – Fri, 8:00am – 5:30pm</p>
+                  </div>
+                </div>
+
+                <div className="infoCard__row">
+                  <LuPhone aria-hidden="true" />
+                  <div>
+                    <p className="infoCard__label">Phone</p>
+                    <p className="infoCard__value">+234 8033566520</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="infoCard__actions">
+                <a
+                  className="infoCard__btn infoCard__btn--primary"
+                  href="https://www.google.com/maps/search/?api=1&query=106%20Close%2C%20Banana%20Island%2C%20Eti%20Osa%20101003%2C%20Lagos"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Get directions
+                </a>
+                <a className="infoCard__btn infoCard__btn--ghost" href="tel:+2348033566520">
+                  Call store
+                </a>
+              </div>
             </div>
-          )}
-        </motion.div>
-      </motion.section>
-
-      {contactFormVisible && (
-        <motion.section
-          className="contact-form"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <h2>Contact Support</h2>
-          <form onSubmit={handleContactFormSubmit}>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={contactFormData.name}
-              onChange={(e) =>
-                setContactFormData({
-                  ...contactFormData,
-                  name: e.target.value,
-                })
-              }
-              required
-            />
-
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={contactFormData.email}
-              onChange={(e) =>
-                setContactFormData({
-                  ...contactFormData,
-                  email: e.target.value,
-                })
-              }
-              required
-            />
-
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              value={contactFormData.message}
-              onChange={(e) =>
-                setContactFormData({
-                  ...contactFormData,
-                  message: e.target.value,
-                })
-              }
-              required
-            />
-
-            <button type="submit">Submit</button>
-          </form>
-          <button onClick={toggleContactForm} className="close-form">
-            Close
-          </button>
+          </div>
         </motion.section>
-      )}
 
-   
+        {/* CONTACT */}
+        <motion.section
+          className="support__section"
+          id="contact"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          variants={sectionVariants}
+        >
+          <header className="support__sectionHeader">
+            <h2 className="support__h2">Contact support</h2>
+            <p className="support__p">Tell us what’s wrong. We’ll fix it or guide you fast.</p>
+          </header>
+
+          <form className="formCard" onSubmit={submitContact} aria-label="Contact support form">
+            <div className="formCard__row">
+              <label className="formCard__label">
+                Name
+                <input
+                  className="formCard__field"
+                  type="text"
+                  value={contact.name}
+                  onChange={(e) => setContact((p) => ({ ...p, name: e.target.value }))}
+                  placeholder="Your name"
+                />
+              </label>
+
+              <label className="formCard__label">
+                Email
+                <input
+                  className="formCard__field"
+                  type="email"
+                  value={contact.email}
+                  onChange={(e) => setContact((p) => ({ ...p, email: e.target.value }))}
+                  placeholder="you@email.com"
+                />
+              </label>
+            </div>
+
+            <label className="formCard__label">
+              Message
+              <textarea
+                className="formCard__field formCard__field--area"
+                rows={5}
+                value={contact.message}
+                onChange={(e) => setContact((p) => ({ ...p, message: e.target.value }))}
+                placeholder="Example: My order hasn’t updated, order #1234…"
+              />
+            </label>
+
+            <button className="formCard__cta" type="submit">
+              Send message
+            </button>
+
+            <div className="support__channels">
+              <p className="support__channelsTitle">Other options</p>
+              <div className="support__channelsGrid">
+                <a className="support__channel" href="mailto:support@albertowatches.com">
+                  <LuMail aria-hidden="true" />
+                  <span>support@albertowatches.com</span>
+                </a>
+                <a className="support__channel" href="tel:+2348033566520">
+                  <LuPhone aria-hidden="true" />
+                  <span>+234 8033566520</span>
+                </a>
+              </div>
+            </div>
+          </form>
+        </motion.section>
+      </div>
+
       <ToastContainer />
-
-      <motion.section
-        className="support-info"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        variants={sectionVariants}
-      >
-        <h2>Other Ways to Reach Us</h2>
-        <p>If you prefer, you can reach us through the following:</p>
-        <ul>
-          <li>Email: <Link to="mailto:support@albertowatches.com">support@albertowatches.com</Link></li>
-          <li>Phone: +123 456 7890</li>
-          <li>Live Chat: Available on the bottom right of the page</li>
-        </ul>
-      </motion.section>
-    </div>
+    </main>
   );
 };
 

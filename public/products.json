@@ -5,6 +5,10 @@
       "name": "ProSport Chrono 5000",
       "price": 199,
       "image": "/images/sport/sport1.avif",
+      "rating": 4.7,
+      "reviews": 128,
+      "badge": "Best seller",
+      "highlights": ["Water resistant", "GPS", "Heart rate monitor"],
       "description": "Engineered for peak performance, this rugged chrono watch features a heart rate monitor, GPS tracking, and water resistance up to 100 meters.",
       "technologies": [
         {
@@ -24,6 +28,14 @@
       "name": "Endurance Xtreme",
       "price": 249,
       "image": "/images/sport/sport2.webp",
+      "rating": 4.6,
+      "reviews": 102,
+      "badge": "Athlete favorite",
+      "highlights": [
+        "Multi-sport modes",
+        "2-week battery",
+        "Lightweight build"
+      ],
       "description": "A versatile sports watch with multi-sport modes, precise fitness tracking, and a long-lasting battery, perfect for the active athlete.",
       "technologies": [
         {
@@ -43,6 +55,14 @@
       "name": "HydroPro Diver 400",
       "price": 219,
       "image": "/images/sport/sport3.avif",
+      "rating": 4.8,
+      "reviews": 146,
+      "badge": "Pro diver",
+      "highlights": [
+        "400m water resistance",
+        "Depth sensor",
+        "Extreme durability"
+      ],
       "description": "Water-resistant up to 400 meters, this high-performance diver watch is designed for professional swimmers and underwater explorers.",
       "technologies": [
         {
@@ -62,6 +82,10 @@
       "name": "AquaSport Pro",
       "price": 229,
       "image": "/images/sport/sport4.avif",
+      "rating": 4.5,
+      "reviews": 89,
+      "badge": "Water sports",
+      "highlights": ["Lap tracking", "Waterproof build", "Rugged design"],
       "description": "Built for water sports, this watch tracks lap times, measures water depth, and offers superior durability in extreme conditions.",
       "technologies": [
         {
@@ -82,6 +106,10 @@
       "price": 239,
       "image": "/images/sport/sport5.webp",
       "description": "Tough enough for your most intense workouts, this all-terrain watch features a barometer, altimeter, and full GPS functionality.",
+      "rating": 4.7,
+      "reviews": 134,
+      "badge": "Adventure ready",
+      "highlights": ["Altimeter", "Barometer", "All-terrain GPS"],
       "technologies": [
         {
           "name": "Barometer",
@@ -102,6 +130,10 @@
       "name": "SmartLife Pro 2.0",
       "price": 349,
       "image": "/images/smart/smartWatch1.webp",
+      "rating": 4.8,
+      "reviews": 210,
+      "badge": "Editor's pick",
+      "highlights": ["Sleep tracking", "Stress monitoring", "Health insights"],
       "description": "The ultimate health companion, this smartwatch tracks heart rate, sleep, stress levels, and integrates seamlessly with your smartphone.",
       "technologies": [
         {
@@ -121,6 +153,14 @@
       "name": "TechTime Edge",
       "price": 399,
       "image": "/images/smart/smart2.webp",
+      "rating": 4.6,
+      "reviews": 187,
+      "badge": "Most loved",
+      "highlights": [
+        "Bluetooth sync",
+        "Custom watch faces",
+        "Fitness tracking"
+      ],
       "description": "Stay connected with advanced notifications, built-in fitness tracking, and customizable watch faces for a modern lifestyle.",
       "technologies": [
         {
@@ -140,6 +180,10 @@
       "name": "WristAI Vision",
       "price": 499,
       "image": "/images/smart/smart3.webp",
+      "rating": 4.9,
+      "reviews": 256,
+      "badge": "AI powered",
+      "highlights": ["AI health insights", "NFC payments", "Smart assistant"],
       "description": "AI-powered smartwatch with real-time health insights, daily wellness suggestions, and an ultra-responsive touch interface.",
       "technologies": [
         {
@@ -159,6 +203,10 @@
       "name": "TechTime Elite",
       "price": 549,
       "image": "/images/smart/smart4.webp",
+      "rating": 4.7,
+      "reviews": 198,
+      "badge": "Premium choice",
+      "highlights": ["24/7 monitoring", "7-day battery", "Premium build"],
       "description": "A premium smartwatch with 24/7 health monitoring, NFC, and enhanced battery life that lasts up to a full week on a single charge.",
       "technologies": [
         {
@@ -178,6 +226,10 @@
       "name": "AI Watch Pro",
       "price": 529,
       "image": "/images/smart/smart5.webp",
+      "rating": 4.8,
+      "reviews": 175,
+      "badge": "AI performance",
+      "highlights": ["Real-time metrics", "Fitness tracking", "AI coaching"],
       "description": "Powerful smartwatch with advanced AI features, fitness tracking, and the ability to monitor your health metrics in real-time.",
       "technologies": [
         {
@@ -199,6 +251,14 @@
       "name": "Classic 1950s Heritage",
       "price": 799,
       "image": "/images/vintage/vintage1.webp",
+      "rating": 4.9,
+      "reviews": 76,
+      "badge": "Collector favorite",
+      "highlights": [
+        "Vintage design",
+        "Sapphire crystal",
+        "Automatic movement"
+      ],
       "description": "A stunning reimagining of a classic 1950s design, this vintage watch is the epitome of elegance with modern movement technology.",
       "technologies": [
         {
@@ -218,6 +278,10 @@
       "name": "Golden Era 18K",
       "price": 999,
       "image": "/images/vintage/vintage2.avif",
+      "rating": 4.8,
+      "reviews": 63,
+      "badge": "Limited edition",
+      "highlights": ["18K gold", "Automatic movement", "Collector piece"],
       "description": "Crafted from solid 18K gold, this vintage piece offers precision and luxury, making it an ideal addition to any collector's lineup.",
       "technologies": [
         {
@@ -237,6 +301,10 @@
       "name": "RetroPilot Chrono",
       "price": 899,
       "image": "/images/vintage/vintage3.avif",
+      "rating": 4.7,
+      "reviews": 81,
+      "badge": "Aviator classic",
+      "highlights": ["Chronograph", "Leather strap", "Vintage dial"],
       "description": "Inspired by vintage aviator designs, this chronograph features a leather strap and a timeless look for the modern enthusiast.",
       "technologies": [
         {
@@ -256,6 +324,10 @@
       "name": "Vintage Diver’s Edition",
       "price": 1275,
       "image": "/images/vintage/vintage4.avif",
+      "rating": 4.8,
+      "reviews": 54,
+      "badge": "Diver classic",
+      "highlights": ["200m resistance", "Luminous dial", "Modern diver"],
       "description": "A tribute to the first divers' watches, with modern enhancements and 200-meter water resistance. The perfect blend of nostalgia and precision.",
       "technologies": [
         {
@@ -275,6 +347,10 @@
       "name": "Retro Steel Chronograph",
       "price": 1349,
       "image": "/images/vintage/vintage5.webp",
+      "rating": 4.9,
+      "reviews": 42,
+      "badge": "Steel icon",
+      "highlights": ["Steel casing", "Automatic movement", "Minimal design"],
       "description": "The steel chronograph design from the 1960s redefined; with upgraded movement and sleek, minimalist appeal for today's discerning wearer.",
       "technologies": [
         {
@@ -294,6 +370,10 @@
       "name": "Vintage Classic 70s",
       "price": 1250,
       "image": "/images/vintage/vintage6.webp",
+      "rating": 4.7,
+      "reviews": 69,
+      "badge": "70s revival",
+      "highlights": ["Bold dial", "Automatic movement", "High contrast"],
       "description": "This 70s-inspired vintage timepiece stands out with its bold dial design, automatic movement, and high-contrast finish for visibility.",
       "technologies": [
         {
@@ -313,6 +393,10 @@
       "name": "Classic Bluefly Diver",
       "price": 1399,
       "image": "/images/vintage/vintage7.webp",
+      "rating": 4.8,
+      "reviews": 58,
+      "badge": "Diver heritage",
+      "highlights": ["Blue bezel", "200m resistance", "Vintage diver"],
       "description": "A diver's watch with a twist—featuring a vintage blue bezel and the same high-performance functionality loved by collectors.",
       "technologies": [
         {
@@ -332,6 +416,14 @@
       "name": "Furlan Marri Flyback ",
       "price": 3100,
       "image": "/images/vintage/vintage8.webp",
+      "rating": 5.0,
+      "reviews": 31,
+      "badge": "Collector’s grail",
+      "highlights": [
+        "Flyback chronograph",
+        "Limited edition",
+        "Advanced mechanics"
+      ],
       "description": "A limited-edition chronograph with an iconic flyback complication. Crafted for serious watch collectors who appreciate advanced mechanics.",
       "technologies": [
         {
@@ -353,6 +445,10 @@
       "name": "Luxury Masterpiece",
       "price": 8500,
       "image": "/images/luxury/luxury1.webp",
+      "rating": 4.9,
+      "reviews": 44,
+      "badge": "Signature piece",
+      "highlights": ["Platinum case", "Swiss movement", "Hand finished"],
       "description": "A luxury timepiece featuring impeccable craftsmanship, a stunning dial, and precision movement—designed for the discerning few.",
       "technologies": [
         {
@@ -372,6 +468,10 @@
       "name": "Diamond Elegance",
       "price": 11000,
       "image": "/images/luxury/luxury2.webp",
+      "rating": 4.8,
+      "reviews": 38,
+      "badge": "Diamond luxury",
+      "highlights": ["Diamond dial", "Swiss quartz", "Elegant design"],
       "description": "Adorned with diamonds, this elegant watch combines beauty with functionality, offering exceptional accuracy and timeless style.",
       "technologies": [
         {
@@ -391,6 +491,14 @@
       "name": "Platinum Prestige",
       "price": 14000,
       "image": "/images/luxury/luxury3.webp",
+      "rating": 4.9,
+      "reviews": 29,
+      "badge": "Elite luxury",
+      "highlights": [
+        "Platinum case",
+        "300m resistance",
+        "Precision engineering"
+      ],
       "description": "This platinum-cased watch is the pinnacle of luxury, offering superb craftsmanship, a refined design, and remarkable movement accuracy.",
       "technologies": [
         {
@@ -410,6 +518,10 @@
       "name": "Golden Elite",
       "price": 16000,
       "image": "/images/luxury/luxury4.avif",
+      "rating": 4.8,
+      "reviews": 26,
+      "badge": "Golden prestige",
+      "highlights": ["Gold plating", "Scratch resistant", "Luxury finish"],
       "description": "A stunning golden timepiece crafted for those who seek elegance and superior design. A watch that stands out in any collection.",
       "technologies": [
         {
@@ -429,6 +541,10 @@
       "name": "Prestige Grand Platinum",
       "price": 18500,
       "image": "/images/luxury/luxury5.avif",
+      "rating": 5.0,
+      "reviews": 19,
+      "badge": "Ultra luxury",
+      "highlights": ["Diamond inlays", "Swiss craftsmanship", "Prestige build"],
       "description": "This prestigious timepiece combines platinum, diamond inlays, and the highest level of Swiss craftsmanship for the ultimate luxury experience.",
       "technologies": [
         {

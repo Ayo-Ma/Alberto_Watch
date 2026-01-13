@@ -1,93 +1,126 @@
-
 /* eslint-disable react/prop-types */
 import "../../Css/Nav.css";
-// import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { LuChevronDown } from "react-icons/lu";
 
 const Nav = ({ isVisible, onClose }) => {
-  // const [showDropdown, setShowDropdown] = useState(false);
+  const [openProducts, setOpenProducts] = useState(false);
+
   const handleClose = () => {
-    // setShowDropdown(false);
+    setOpenProducts(false);
     onClose();
   };
 
+  const linkClass = ({ isActive }) =>
+    isActive ? "siteNav__link siteNav__link--active" : "siteNav__link";
+
   return (
-    <nav className={`nav ${isVisible ? "visible" : ""}`}>
+    <nav
+      className={isVisible ? "siteNav siteNav--open" : "siteNav"}
+      aria-label="Main"
+    >
       <button
-        className="close-nav"
-        role="button"
+        className="siteNav__close"
         onClick={handleClose}
         aria-label="Close navigation"
       >
-        &times;
+        ×
       </button>
 
-      <ul className="navlinks">
+      <ul className="siteNav__links">
         <li>
-          <NavLink
-           onClick={handleClose}
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "active-link" : ""
-            }
-          >
+          <NavLink onClick={handleClose} to="/" className={linkClass}>
             Home
           </NavLink>
         </li>
-        <li className="dropdown-parent">
-          <NavLink
-           onClick={handleClose}
-            to="/products"
-            className="products"
-                                 
-          >
+        <li className="siteNav__item siteNav__item--hasMenu">
+          {/* Desktop link */}
+          <NavLink onClick={handleClose} to="/products" className={linkClass}>
             Products
           </NavLink>
-          <ul className={`dropdown`}>
+
+          {/* Mobile dropdown button */}
+          <button
+            className="siteNav__dropdownBtn"
+            onClick={() => setOpenProducts((v) => !v)}
+            aria-expanded={openProducts}
+            aria-controls="products-submenu"
+            type="button"
+          >
+            Products
+            <LuChevronDown
+              className={
+                openProducts
+                  ? "siteNav__chev siteNav__chev--open"
+                  : "siteNav__chev"
+              }
+            />
+          </button>
+
+          <ul
+            id="products-submenu"
+            className={
+              openProducts
+                ? "siteNav__submenu siteNav__submenu--open"
+                : "siteNav__submenu"
+            }
+          >
             <li>
-              <NavLink  onClick={handleClose} to="/products/luxury">Luxury</NavLink>
+              <NavLink
+                onClick={handleClose}
+                to="/products/luxury"
+                className={linkClass}
+              >
+                Luxury
+              </NavLink>
             </li>
             <li>
-              <NavLink  onClick={handleClose} to="/products/vintage">Vintage</NavLink>
+              <NavLink
+                onClick={handleClose}
+                to="/products/vintage"
+                className={linkClass}
+              >
+                Vintage
+              </NavLink>
             </li>
             <li>
-              <NavLink  onClick={handleClose} to="/products/sports">Sports</NavLink>
+              <NavLink
+                onClick={handleClose}
+                to="/products/sports"
+                className={linkClass}
+              >
+                Sports
+              </NavLink>
             </li>
             <li>
-              <NavLink  onClick={handleClose} to="/products/smart">Smart</NavLink>
+              <NavLink
+                onClick={handleClose}
+                to="/products/smart"
+                className={linkClass}
+              >
+                Smart
+              </NavLink>
             </li>
           </ul>
         </li>
+
         <li>
           <NavLink
             onClick={handleClose}
             to="/store-locator"
-            className={({ isActive }) =>
-              isActive ? "active-link" : ""
-            }
+            className={linkClass}
           >
             Store Locator
           </NavLink>
         </li>
         <li>
-          <NavLink
-           onClick={handleClose}
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "active-link" : ""
-            }
-          >
-            About Us
+          <NavLink onClick={handleClose} to="/about" className={linkClass}>
+            About
           </NavLink>
         </li>
         <li>
-          <NavLink
-            onClick={handleClose}
-            to="/support"
-            className={({ isActive }) =>
-              isActive ? "active-link" : ""
-            }
-          >
+          <NavLink onClick={handleClose} to="/support" className={linkClass}>
             Support
           </NavLink>
         </li>
