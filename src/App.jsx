@@ -15,13 +15,15 @@ import Breadcrumbs from "./Components/Breadcrumbs";
 import Blogs from "./Components/Blogs";
 import BlogDetails from "./Components/BlogDetails";
 import Policies from "./Components/Policies";
-import Ticker from './Components/Ticker'
+import Ticker from "./Components/Ticker";
 import LiveActivity from "./Components/LiveActivity";
+import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   return (
     <>
       <LiveActivity />
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Breadcrumbs />
         <Routes>
@@ -37,7 +39,6 @@ function App() {
           <Route path="/blog" element={<Blogs />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/policies" element={<Policies />} />
-
         </Routes>
         <Footer />
         <Ticker />
